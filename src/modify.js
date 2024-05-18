@@ -1,18 +1,33 @@
 // These are your event handlers
-const clickCounterHandler = () => {
-  const button = document.getElementById('add-one')
-  let clickCounter = 0
-  button.addEventListener('click', ()=> {
-    clicks++
-    button.dataset.clicks = clickCounter
-    button.textContent =`I've been clicked ${clicks} time.`
-})
+const clickCounterHandler = (e) => {
+   e.target.dataset.clicks = Number(e.target.dataset.clicks) + 1
+
+  if (e.target.dataset.clicks === '1'){
+    e.target.textContent =`I've been clicked ${e.target.dataset.clicks} time.`
+  } else if (e.target.dataset.clicks > '1'){
+    e.target.textContent =`I've been clicked ${e.target.dataset.clicks} times!`
+  }
+
+
+};
+// working on the webpage, not passing the test, what am I doing wrong?
+//  come back and use keybordevent 
+const handleKeydown = (e) => {
+  const p = document.getElementById("keydown-tracker")
+  const keyTracker = e.key
+  p.textContent = "You pressed Key" + e.key.toUpperCase()
 
 };
 
-const handleKeydown = () => {
+const inlineClickCounterHandler = (e) => {
+  e.target.dataset.clicks = Number(e.target.dataset.clicks) + 1
 
-};
+ if (e.target.dataset.clicks === '1'){
+   e.target.textContent =`I've been clicked ${e.target.dataset.clicks} time.`
+ } else if (e.target.dataset.clicks > '1'){
+   e.target.textContent =`I've been clicked ${e.target.dataset.clicks} times!`
+ }
+}
 
 // We've started this one for you
 const handleDelegation = (event) => {
@@ -35,7 +50,14 @@ randomButton.addEventListener('click', ()=>{
 const main = () => {
   const delegationContainer = document.querySelector('#delegation');
   delegationContainer.addEventListener('click', handleDelegation);
-clickCounterHandler()
+  // clickcounter
+const button = document.getElementById("click-button"); 
+button.addEventListener('click',clickCounterHandler )
+// handle keydown 
+document.body.addEventListener('keydown', handleKeydown)
+// inlineclickcounter
+const inlinebutton = document.getElementById("inline-example"); 
+button.addEventListener('click',clickCounterHandler )
   
 };
 
