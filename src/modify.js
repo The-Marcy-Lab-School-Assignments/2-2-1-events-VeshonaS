@@ -11,7 +11,7 @@ const clickCounterHandler = (e) => {
 
 };
 // working on the webpage, not passing the test, what am I doing wrong?
-//  come back and use keybordevent 
+ 
 const handleKeydown = (e) => {
   const p = document.getElementById("keydown-tracker")
   const keyTracker = e.key
@@ -32,17 +32,16 @@ const inlineClickCounterHandler = (e) => {
 // We've started this one for you
 const handleDelegation = (event) => {
   const resultSpan = document.querySelector('#delegation-result');
-  resultSpan.textContent = event.target.textContent;
+  if (event.target.tagName === "") {
+    resultSpan.textContent = event.target.textContent;
+  }
 };
 
 const addNewRandomNumber = () => {
-const randomButton = document.getElementById('add-random-num')
 const addOnList = document.querySelector('#random-numbers')
-randomButton.addEventListener('click', ()=>{
-  const newItem = document.createElement('li')
-  newItem.append( Math.random() * 100 + 1)
-  addOnList.append(newItem)
-})
+const newItem = document.createElement('li')
+newItem.append( Math.random() * 100 + 1)
+addOnList.append(newItem)
 };
 
 
@@ -57,8 +56,10 @@ button.addEventListener('click',clickCounterHandler )
 document.body.addEventListener('keydown', handleKeydown)
 // inlineclickcounter
 const inlinebutton = document.getElementById("inline-example"); 
-button.addEventListener('click',clickCounterHandler )
-  
+inlinebutton.addEventListener('click',inlineClickCounterHandler)
+  // Addnewrandomnumber
+  const randomButton = document.getElementById('add-random-num')
+  randomButton.addEventListener('click', addNewRandomNumber)
 };
 
 main();

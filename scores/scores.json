@@ -34,17 +34,17 @@
       "MoTe1": 1,
       "MoTe2": 1,
       "MoTe3": 0,
-      "MoTe4": 0,
+      "MoTe4": 1,
       "MoTe5": 0,
       "MoTe6": 0,
-      "MoTe7": 0,
-      "MoTe8": 0,
+      "MoTe7": 1,
+      "MoTe8": 1,
       "MoTe9": 0
     }
   },
   "humanReadable": {
     "From Scratch Tests": "2/2",
-    "finalTestScore": "FINAL SCORE: 4/11",
-    "Modify Tests": "2/9"
+    "finalTestScore": "FINAL SCORE: 7/11",
+    "Modify Tests": "5/9"
   }
 }
