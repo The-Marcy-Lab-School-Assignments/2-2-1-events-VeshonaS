@@ -44,6 +44,10 @@ newItem.append( Math.random() * 100 + 1)
 addOnList.append(newItem)
 };
 
+const removingEventListener = () =>{
+
+}
+
 
 // Select the elements and attach your event handlers inside main
 const main = () => {
@@ -60,6 +64,9 @@ inlinebutton.addEventListener('click',inlineClickCounterHandler)
   // Addnewrandomnumber
   const randomButton = document.getElementById('add-random-num')
   randomButton.addEventListener('click', addNewRandomNumber)
+  // removingEventListener
+  const removeButton = document.getElementById('remove')
+  removeButton.addEventListener('click', removingEventListener)
 };
 
 main();
