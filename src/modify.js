@@ -13,9 +13,9 @@ const clickCounterHandler = (e) => {
 // working on the webpage, not passing the test, what am I doing wrong?
  
 const handleKeydown = (e) => {
-  const p = document.getElementById("keydown-tracker")
-  const keyTracker = e.key
-  p.textContent = "You pressed Key" + e.key.toUpperCase()
+  const p = document.querySelector("#keydown-tracker")
+  const keyTracker = e.keyboardEvent()
+  p.textContent = "You pressed Key" + keyTracker.toUpperCase()
 
 };
 
@@ -32,7 +32,7 @@ const inlineClickCounterHandler = (e) => {
 // We've started this one for you
 const handleDelegation = (event) => {
   const resultSpan = document.querySelector('#delegation-result');
-  if (event.target.tagName === "") {
+  if (event.target.tagName === "BUTTON") {
     resultSpan.textContent = event.target.textContent;
   }
 };
@@ -45,7 +45,8 @@ addOnList.append(newItem)
 };
 
 const removingEventListener = () =>{
-
+  const delegationContainer = document.querySelector('#delegation');
+delegationContainer.removeEventListener('click', handleDelegation)
 }
 
 
