@@ -1,4 +1,5 @@
 // These are your event handlers
+/** FEEDBACK: Great job, you have most test cases passing! I wrote some feedback on what you may need to do to get the information you need for that last test! */
 const clickCounterHandler = (e) => {
    e.target.dataset.clicks = Number(e.target.dataset.clicks) + 1
 
@@ -14,6 +15,7 @@ const clickCounterHandler = (e) => {
  
 const handleKeydown = (e) => {
   const p = document.querySelector("#keydown-tracker")
+  /** FEEDBACK: What property can you be targeting to get the specific key that you pressed? One that is already formatted like the one in the test? */
   const keyTracker = e.keyboardEvent()
   p.textContent = "You pressed Key" + keyTracker.toUpperCase()
 
